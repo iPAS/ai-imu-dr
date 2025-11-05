@@ -103,6 +103,7 @@ def prepare_loss_data(args, dataset):
     # prepare delta_p_gt
     list_rpe = {}
     for dataset_name, Ns in dataset.datasets_train_filter.items():
+        # print(f'{dataset_name}, {Ns}')
         t, ang_gt, p_gt, v_gt, u = prepare_data(args, dataset, dataset_name, 0)
         p_gt = p_gt.double()
         Rot_gt = torch.zeros(Ns[1], 3, 3)
